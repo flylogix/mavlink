@@ -4691,16 +4691,22 @@
       <field type="float" name="ecu_index">ECU index</field>
       <field type="float" name="rpm">RPM</field>
       <field type="float" name="fuel_consumed" units="cm^3">Fuel consumed</field>
-      <field type="float" name="fuel_flow" units="g/min">Fuel flow rate</field>
+      <field type="float" name="fuel_flow" units="cm^3/min">Fuel flow rate</field>
       <field type="float" name="engine_load" units="%">Engine load</field>
       <field type="float" name="throttle_position" units="%">Throttle position</field>
-      <field type="float" name="spark_dwell_time" units="V">Spark dwell time</field>
+      <field type="float" name="spark_dwell_time" units="ms">Spark dwell time</field>
       <field type="float" name="barometric_pressure" units="kPa">Barometric pressure</field>
       <field type="float" name="intake_manifold_pressure" units="kPa">Intake manifold pressure(</field>
       <field type="float" name="intake_manifold_temperature" units="degC">Intake manifold temperature</field>
       <field type="float" name="cylinder_head_temperature" units="degC">Cylinder head temperature</field>
       <field type="float" name="ignition_timing" units="deg">Ignition timing (Crank angle degrees)</field>
       <field type="float" name="injection_time" units="ms">Injection time</field>
+      <field type="float" name="exhaust_gas_temperature" units="degC">Exhaust gas temperature</field>
+      <field type="float" name="throttle_out" units="%">Output throttle</field>
+      <field type="float" name="pt_compensation">Pressure/temperature compensation</field>
+      <extensions/>
+      <field type="float" name="ignition_voltage" units="V">Supply voltage to EFI sparking system.  Zero in this value means "unknown", so if the supply voltage really is zero volts use 0.0001 instead.</field>
+      <field type="float" name="fuel_pressure" units="kPa">Fuel pressure. Zero in this value means "unknown", so if the fuel pressure really is zero kPa use 0.0001 instead.</field>
     </message>
     <!-- MESSAGE IDs 180 - 229: Space for custom messages in individual projectname_messages.xml files -->
     <message id="230" name="ESTIMATOR_STATUS">
