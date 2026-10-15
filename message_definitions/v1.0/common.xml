@@ -495,6 +495,36 @@
         <description>Camera does not supply storage status information. Capacity information in STORAGE_INFORMATION fields will be ignored.</description>
       </entry>
     </enum>
+    <enum name="STORAGE_TYPE">
+      <description>Flags to indicate the type of storage.</description>
+      <entry value="0" name="STORAGE_TYPE_UNKNOWN">
+        <description>Storage type is not known.</description>
+      </entry>
+      <entry value="1" name="STORAGE_TYPE_USB_STICK">
+        <description>Storage type is USB device.</description>
+      </entry>
+      <entry value="2" name="STORAGE_TYPE_SD">
+        <description>Storage type is SD card.</description>
+      </entry>
+      <entry value="3" name="STORAGE_TYPE_MICROSD">
+        <description>Storage type is microSD card.</description>
+      </entry>
+      <entry value="4" name="STORAGE_TYPE_CF">
+        <description>Storage type is CFast.</description>
+      </entry>
+      <entry value="5" name="STORAGE_TYPE_CFE">
+        <description>Storage type is CFexpress.</description>
+      </entry>
+      <entry value="6" name="STORAGE_TYPE_XQD">
+        <description>Storage type is XQD.</description>
+      </entry>
+      <entry value="7" name="STORAGE_TYPE_HD">
+        <description>Storage type is HD mass storage type.</description>
+      </entry>
+      <entry value="254" name="STORAGE_TYPE_OTHER">
+        <description>Storage type is other, not listed type.</description>
+      </entry>
+    </enum>
     <!-- The MAV_CMD enum entries describe either: -->
     <!--  * the data payload of mission items (as used in the MISSION_ITEM_INT message) -->
     <!--  * the data payload of mavlink commands (as used in the COMMAND_INT and COMMAND_LONG messages) -->
@@ -1928,6 +1958,42 @@
         <description>64-bit floating-point</description>
       </entry>
     </enum>
+    <enum name="MAV_PARAM_EXT_TYPE">
+      <description>Specifies the datatype of a MAVLink extended parameter.</description>
+      <entry value="1" name="MAV_PARAM_EXT_TYPE_UINT8">
+        <description>8-bit unsigned integer</description>
+      </entry>
+      <entry value="2" name="MAV_PARAM_EXT_TYPE_INT8">
+        <description>8-bit signed integer</description>
+      </entry>
+      <entry value="3" name="MAV_PARAM_EXT_TYPE_UINT16">
+        <description>16-bit unsigned integer</description>
+      </entry>
+      <entry value="4" name="MAV_PARAM_EXT_TYPE_INT16">
+        <description>16-bit signed integer</description>
+      </entry>
+      <entry value="5" name="MAV_PARAM_EXT_TYPE_UINT32">
+        <description>32-bit unsigned integer</description>
+      </entry>
+      <entry value="6" name="MAV_PARAM_EXT_TYPE_INT32">
+        <description>32-bit signed integer</description>
+      </entry>
+      <entry value="7" name="MAV_PARAM_EXT_TYPE_UINT64">
+        <description>64-bit unsigned integer</description>
+      </entry>
+      <entry value="8" name="MAV_PARAM_EXT_TYPE_INT64">
+        <description>64-bit signed integer</description>
+      </entry>
+      <entry value="9" name="MAV_PARAM_EXT_TYPE_REAL32">
+        <description>32-bit floating-point</description>
+      </entry>
+      <entry value="10" name="MAV_PARAM_EXT_TYPE_REAL64">
+        <description>64-bit floating-point</description>
+      </entry>
+      <entry value="11" name="MAV_PARAM_EXT_TYPE_CUSTOM">
+        <description>Custom Type</description>
+      </entry>
+    </enum>
     <enum name="MAV_RESULT">
       <description>Result from a MAVLink command (MAV_CMD)</description>
       <entry value="0" name="MAV_RESULT_ACCEPTED">
@@ -2897,6 +2963,21 @@
       </entry>
       <entry value="3" name="VIDEO_STREAM_TYPE_MPEG_TS_H264">
         <description>Stream is h.264 on MPEG TS (URI gives the port number)</description>
+      </entry>
+    </enum>
+    <enum name="PARAM_ACK">
+      <description>Result from PARAM_EXT_SET message.</description>
+      <entry value="0" name="PARAM_ACK_ACCEPTED">
+        <description>Parameter value ACCEPTED and SET</description>
+      </entry>
+      <entry value="1" name="PARAM_ACK_VALUE_UNSUPPORTED">
+        <description>Parameter value UNKNOWN/UNSUPPORTED</description>
+      </entry>
+      <entry value="2" name="PARAM_ACK_FAILED">
+        <description>Parameter failed to set</description>
+      </entry>
+      <entry value="3" name="PARAM_ACK_IN_PROGRESS">
+        <description>Parameter value received but not yet set/accepted. A subsequent PARAM_EXT_ACK with the final result will follow once operation is completed. This is returned immediately for parameters that take longer to set, indicating that the the parameter was received and does not need to be resent.</description>
       </entry>
     </enum>
     <enum name="CAMERA_MODE">
